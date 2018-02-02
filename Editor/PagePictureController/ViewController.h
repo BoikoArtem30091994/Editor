@@ -23,8 +23,8 @@
 
 -(void) downloadImages:(NSArray*) array;
 -(void) downloadImagesPastboard:(NSArray*) arrayURLS;
--(NSMutableArray*) getImage;
--(void) setImage:(NSMutableArray*) array;
+-(NSMutableArray*) getImageForDocument;
+-(void) setImageFromDocument:(NSMutableArray*) array;
 - (void)moveItemFromIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex;
 
 - (IBAction)openBtn:(id)sender;

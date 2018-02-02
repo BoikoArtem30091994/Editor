@@ -15,6 +15,9 @@
 		A65119F1200D65490093EB1D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A65119F0200D65490093EB1D /* main.m */; };
 		A65119FC200D654A0093EB1D /* EditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A65119FB200D654A0093EB1D /* EditorTests.m */; };
 		A6511A07200D654A0093EB1D /* EditorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6511A06200D654A0093EB1D /* EditorUITests.m */; };
+		ACBDBF61202098DF004D9398 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBDBF60202098DF004D9398 /* WebViewController.m */; };
+		ACBDBF6420209BBA004D9398 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACBDBF6320209BBA004D9398 /* WebKit.framework */; };
+		ACBDBF702020C6CE004D9398 /* ToolbarWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBDBF6E2020C6CE004D9398 /* ToolbarWindowController.m */; };
 		ACE541B4200E1CC700235794 /* CollectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE541B3200E1CC700235794 /* CollectionItem.m */; };
 		ACE541B6200E234800235794 /* CollectionItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACE541B5200E234800235794 /* CollectionItem.xib */; };
 		ACE541B9200E26FC00235794 /* CollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE541B8200E26FC00235794 /* CollectionView.m */; };
@@ -58,6 +61,11 @@
 		A6511A02200D654A0093EB1D /* EditorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EditorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6511A06200D654A0093EB1D /* EditorUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditorUITests.m; sourceTree = "<group>"; };
 		A6511A08200D654A0093EB1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACBDBF5F202098DF004D9398 /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		ACBDBF60202098DF004D9398 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		ACBDBF6320209BBA004D9398 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		ACBDBF6D2020C6CE004D9398 /* ToolbarWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolbarWindowController.h; sourceTree = "<group>"; };
+		ACBDBF6E2020C6CE004D9398 /* ToolbarWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToolbarWindowController.m; sourceTree = "<group>"; };
 		ACE541B2200E1CC700235794 /* CollectionItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionItem.h; sourceTree = "<group>"; };
 		ACE541B3200E1CC700235794 /* CollectionItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionItem.m; sourceTree = "<group>"; };
 		ACE541B5200E234800235794 /* CollectionItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionItem.xib; sourceTree = "<group>"; };
@@ -74,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACBDBF6420209BBA004D9398 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +110,7 @@
 				A65119FA200D654A0093EB1D /* EditorTests */,
 				A6511A05200D654A0093EB1D /* EditorUITests */,
 				A65119DF200D65490093EB1D /* Products */,
+				ACBDBF6220209BBA004D9398 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,8 +129,8 @@
 			children = (
 				A65119E1200D65490093EB1D /* AppDelegate.h */,
 				A65119E2200D65490093EB1D /* AppDelegate.m */,
-				A65119E4200D65490093EB1D /* ViewController.h */,
-				A65119E5200D65490093EB1D /* ViewController.m */,
+				ACBDBF662020C216004D9398 /* PagePictureController */,
+				ACBDBF652020C1F3004D9398 /* WebViewController */,
 				A65119E7200D65490093EB1D /* Document.h */,
 				A65119E8200D65490093EB1D /* Document.m */,
 				ACE541B5200E234800235794 /* CollectionItem.xib */,
@@ -150,6 +160,34 @@
 				A6511A08200D654A0093EB1D /* Info.plist */,
 			);
 			path = EditorUITests;
+			sourceTree = "<group>";
+		};
+		ACBDBF6220209BBA004D9398 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ACBDBF6320209BBA004D9398 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ACBDBF652020C1F3004D9398 /* WebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				ACBDBF6D2020C6CE004D9398 /* ToolbarWindowController.h */,
+				ACBDBF6E2020C6CE004D9398 /* ToolbarWindowController.m */,
+				ACBDBF5F202098DF004D9398 /* WebViewController.h */,
+				ACBDBF60202098DF004D9398 /* WebViewController.m */,
+			);
+			path = WebViewController;
+			sourceTree = "<group>";
+		};
+		ACBDBF662020C216004D9398 /* PagePictureController */ = {
+			isa = PBXGroup;
+			children = (
+				A65119E4200D65490093EB1D /* ViewController.h */,
+				A65119E5200D65490093EB1D /* ViewController.m */,
+			);
+			path = PagePictureController;
 			sourceTree = "<group>";
 		};
 		ACE541BA200E270E00235794 /* SupportingFiles */ = {
@@ -322,9 +360,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACE541B9200E26FC00235794 /* CollectionView.m in Sources */,
+				ACBDBF702020C6CE004D9398 /* ToolbarWindowController.m in Sources */,
 				ACE541C12010CCEA00235794 /* ImageFile.m in Sources */,
 				A65119E9200D65490093EB1D /* Document.m in Sources */,
 				A65119E6200D65490093EB1D /* ViewController.m in Sources */,
+				ACBDBF61202098DF004D9398 /* WebViewController.m in Sources */,
 				ACE541BE200E3B5200235794 /* CollectionItemView.m in Sources */,
 				ACE541B4200E1CC700235794 /* CollectionItem.m in Sources */,
 				A65119F1200D65490093EB1D /* main.m in Sources */,

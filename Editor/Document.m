@@ -34,7 +34,7 @@
     NSMutableAttributedString *str = self.viewController.textView.textStorage;
     [str setAttributedString: self.textString];
     
-    [self.viewController setImage:_saveArray];
+    [self.viewController setImageFromDocument:_saveArray];
 }
 
 
@@ -54,7 +54,7 @@
     //  Save image with NSKeyedArchiver
     
     NSArray *array = [[NSArray alloc]init];
-    array = [self.viewController getImage];
+    array = [self.viewController getImageForDocument];
     NSData *dataImage = [NSKeyedArchiver archivedDataWithRootObject:array];
     
     NSMutableDictionary *dataDictionary = [[NSMutableDictionary alloc]init];

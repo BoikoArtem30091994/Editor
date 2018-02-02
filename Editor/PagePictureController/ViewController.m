@@ -85,12 +85,12 @@
 }
 #pragma mark: set and get image for document
 
--(NSMutableArray*) getImage {
+-(NSMutableArray*) getImageForDocument {
     NSMutableArray *array = [[NSMutableArray alloc]initWithArray:_arrayCollection];
     return array;
 }
 
--(void) setImage:(NSMutableArray*) array{
+-(void) setImageFromDocument:(NSMutableArray*) array{
     [_arrayCollection addObjectsFromArray:array];
     [_collectionView reloadData];
 }
@@ -125,7 +125,6 @@
 - (void)collectionView:(NSCollectionView *)collectionView draggingSession:(NSDraggingSession *)session willBeginAtPoint:(NSPoint)screenPoint forItemsAtIndexPaths:(NSSet<NSIndexPath *> *)indexPaths{
     
     indexPathsOfDraggedItems = [[NSMutableArray alloc] initWithArray: [indexPaths allObjects]];
-    
     
 }
 
@@ -188,7 +187,15 @@
     
     if ([[pboard types] containsObject: NSURLPboardType])
     {
-        
+
+        NSLog(@"NSURLPboardType");
+        NSArray * pastboardArray = [pboard propertyListForType:NSURLPboardType];
+        NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: [pastboardArray objectAtIndex:0]]];
+        NSImage *image = [[NSImage alloc] initWithData:imageData];
+        [_arrayCollection insertObject:image atIndex:indexPath.item];
+        [collectionView reloadData];
+
+        return YES;
     }
     
     if ( [[pboard types] containsObject:NSTIFFPboardType] )
